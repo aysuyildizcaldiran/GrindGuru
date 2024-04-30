@@ -3,19 +3,16 @@ import React from 'react';
 import {SafeAreaView} from 'react-native-safe-area-context';
 import {TouchableOpacity} from 'react-native-gesture-handler';
 
-const SplashScreen = () => {
+const SplashScreen = ({navigation}) => {
   return (
     <SafeAreaView style={{flex: 1}}>
       <ImageBackground
         source={require('../../assets/IMG/splash.png')}
         style={{flex: 1}}>
         <View style={styles.container}>
-          <Text style={{color: 'white', fontSize: 25}}> Welcome to </Text>
-          <Text style={{color: 'white', fontSize: 45, marginBottom: 30}}>
-            {' '}
-            Cavosh{' '}
-          </Text>
-          <TouchableOpacity style={styles.buttonContainer}>
+          <Text style={styles.text1}> Welcome to </Text>
+          <Text style={styles.text2}>Cavosh</Text>
+          <TouchableOpacity style={styles.buttonContainer} onPress={()=>navigation.navigate("Authh")}>
             <Text style={styles.buttonText}>Get Started</Text>
           </TouchableOpacity>
         </View>
@@ -42,4 +39,6 @@ const styles = StyleSheet.create({
   buttonText: {
     color: 'white',
   },
+  text1:{color: 'white', fontSize: 25},
+  text2:{color: '#E65738', fontSize: 45, marginBottom: 30}
 });

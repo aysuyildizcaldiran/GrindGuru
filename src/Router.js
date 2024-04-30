@@ -7,21 +7,20 @@ import Menu from './pages/Menu/Menu';
 import Favorites from './pages/Favorites/Favorites';
 import Profile from './pages/Profile/Profile';
 import Cart from './pages/Cart/Cart';
-import Login from './pages/Auth/Login';
-import Register from './pages/Auth/Register';
 import SplashScreen from './pages/Auth/SplashScreen';
+import { View } from 'react-native';
+import Auth from './pages/Auth/Auth';
 const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();
 
 const AuthStack = () => (
-  <Stack.Navigator initialRouteName="SplashScreen">
+  <Stack.Navigator initialRouteName="Authh">
     <Stack.Screen
       name="SplashScreen"
       component={SplashScreen}
       options={{headerShown: false}}
     />
-    <Stack.Screen name="Login" component={Login} />
-    <Stack.Screen name="Register" component={Register} />
+    <Stack.Screen name="Authh" component={Auth}  options={{headerShown: false}} />
   </Stack.Navigator>
 );
 
@@ -34,6 +33,8 @@ const AppTabs = () => (
     <Tab.Screen name="Cart" component={Cart} />
   </Tab.Navigator>
 );
+
+
 
 const Router = () => {
   const [isLoggedIn, setLoggedIn] = useState(false);
