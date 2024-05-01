@@ -1,11 +1,12 @@
-import {Image, ImageBackground, StyleSheet, Text, View} from 'react-native';
+import {Image, ImageBackground, StyleSheet, Text, View,TouchableOpacity} from 'react-native';
 import React from 'react';
 import {SafeAreaView} from 'react-native-safe-area-context';
-import {TouchableOpacity} from 'react-native-gesture-handler';
+import { StatusBar } from 'native-base';
 
 const SplashScreen = ({navigation}) => {
   return (
-    <SafeAreaView style={{flex: 1}}>
+    <> 
+    <View style={{flex: 1}}> 
       <ImageBackground
         source={require('../../assets/IMG/splash.png')}
         style={{flex: 1}}>
@@ -17,7 +18,8 @@ const SplashScreen = ({navigation}) => {
           </TouchableOpacity>
         </View>
       </ImageBackground>
-    </SafeAreaView>
+    </View>
+    </>
   );
 };
 

@@ -2,11 +2,11 @@ import {Image, StyleSheet, Text, View} from 'react-native';
 import React, {useState} from 'react';
 import Login from './Login';
 import Register from './Register';
-import {NativeBaseProvider, StatusBar, ZStack} from 'native-base';
+import {Button, NativeBaseProvider, StatusBar, ZStack} from 'native-base';
 
 import Toggle from 'react-native-toggle-element';
 
-const Auth = () => {
+const Auth = ({navigation}) => {
   const [toggleValue, setToggleValue] = useState(false);
   const error = console.error;
   console.error = (...args) => {
@@ -17,7 +17,7 @@ const Auth = () => {
     return (
       <>
         <StatusBar barStyle="light-content" />
-        <ZStack h="15%" w="100%" marginBottom={50}>
+        <ZStack flex={1} w="100%" marginBottom={50}>
           <Image
             source={require('../../assets/IMG/splash2.png')}
             style={{
@@ -60,7 +60,9 @@ const Auth = () => {
     <NativeBaseProvider>
       <View style={{flex: 1, backgroundColor: 'white'}}>
         <AppBar style={{flex: 1}} />
-        {toggleValue ? <Register /> : <Login />}
+        <View style={{flex:4}}>
+        {toggleValue ? <Register/> : <Login />}
+        </View>
       </View>
     </NativeBaseProvider>
   );

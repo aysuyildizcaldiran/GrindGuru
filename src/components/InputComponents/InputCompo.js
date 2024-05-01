@@ -1,4 +1,4 @@
-import {StyleSheet, Text, View} from 'react-native';
+import {Dimensions, StyleSheet, Text, View} from 'react-native';
 import React, { useState } from 'react';
 import {Input, Button, Icon} from 'native-base';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
@@ -9,6 +9,7 @@ const InputCompo = ({placeholder, width, inputRightIcon,type}) => {
     <Input
       placeholder={placeholder}
       width={width}
+      height={Dimensions.get("window").height/20}
       alignSelf={'center'}
       borderRadius={15}
       marginHorizontal={10}
@@ -23,7 +24,7 @@ const InputCompo = ({placeholder, width, inputRightIcon,type}) => {
               as={
                 <MaterialIcons name={show ? 'visibility' : 'visibility-off'} />
               }
-              size={6}
+              size={5}
               mr="2"
               color="muted.400"
             />

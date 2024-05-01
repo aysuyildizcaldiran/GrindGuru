@@ -12,9 +12,10 @@ import { View } from 'react-native';
 import Auth from './pages/Auth/Auth';
 const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();
+import Icon from 'react-native-vector-icons/AntDesign';
 
 const AuthStack = () => (
-  <Stack.Navigator initialRouteName="Authh">
+  <Stack.Navigator initialRouteName="SplasScreen">
     <Stack.Screen
       name="SplashScreen"
       component={SplashScreen}
@@ -25,19 +26,29 @@ const AuthStack = () => (
 );
 
 const AppTabs = () => (
-  <Tab.Navigator>
-    <Tab.Screen name="Home" component={Home} />
-    <Tab.Screen name="Menu" component={Menu} />
-    <Tab.Screen name="Favorites" component={Favorites} />
-    <Tab.Screen name="Profile" component={Profile} />
-    <Tab.Screen name="Cart" component={Cart} />
+  <Tab.Navigator >
+    <Tab.Screen name="Home" component={Home} options={{headerShown: false,tabBarIcon: () => (
+        <Icon name="home" color={"muted.400"} size={20} />
+      ),}} />
+    <Tab.Screen name="Menu" component={Menu} options={{headerShown: false,tabBarIcon: () => (
+        <Icon name="bars" color={"muted.400"} size={20} />
+      ),}} />
+    <Tab.Screen name="Favorites" component={Favorites} options={{headerShown: false,tabBarIcon: () => (
+        <Icon name="heart" color={"muted.400"} size={20} />
+      ),}} />
+    <Tab.Screen name="Profile" component={Profile} options={{headerShown: false,tabBarIcon: () => (
+        <Icon name="profile" color={"muted.400"} size={20} />
+      ),}} />
+    <Tab.Screen name="Cart" component={Cart} options={{headerShown: false,tabBarIcon: () => (
+        <Icon name="shoppingcart" color={"muted.400"} size={20} />
+      ),}} />
   </Tab.Navigator>
 );
 
 
 
 const Router = () => {
-  const [isLoggedIn, setLoggedIn] = useState(false);
+  const [isLoggedIn, setLoggedIn] = useState(true);
   return (
     <NavigationContainer>
       {isLoggedIn ? <AppTabs /> : <AuthStack />}
