@@ -1,11 +1,18 @@
 import { StyleSheet, Text, View } from 'react-native'
-import React from 'react'
-
+import React, { useState } from 'react'
+import SearchAppBar from '../../components/AppBar/SearchAppBar'
+import { NativeBaseProvider } from 'native-base';
 const Cart = () => {
   return (
-    <View>
-      <Text>Cart</Text>
-    </View>
+    <NativeBaseProvider>
+       <View style={{flex:1}}> 
+      <SearchAppBar text={"My Cart"} icon={false} search={false}/>
+      </View>
+      <View style={{flex:3}}> 
+     
+      </View>
+     
+    </NativeBaseProvider>
   )
 }
 
