@@ -1,10 +1,12 @@
-import { StyleSheet, Text, View,ScrollView ,Image ,TouchableOpacity} from 'react-native'
+import { Text, View,ScrollView ,Image ,TouchableOpacity} from 'react-native'
 import React, { useState } from 'react'
 import SearchAppBar from '../../components/AppBar/SearchAppBar'
 import { NativeBaseProvider } from 'native-base';
-import { COLOUR } from '../../assets/settings';
 import Fontisto from 'react-native-vector-icons/Fontisto';
 import CoffeCompo from '../../components/CoffeComponents/CoffeCompo';
+
+import {COLOUR} from '../../assets/settings';
+import styles from './Menu.style';
 
 function ScroolElement1() {
   return (
@@ -63,13 +65,4 @@ const Menu = () => {
   )
 }
 
-export default Menu
-
-const styles = StyleSheet.create({
-  scrollContainer: {
-    flexDirection: "row",
-    flexWrap: "wrap",
-    justifyContent: "space-between",
-    paddingHorizontal: 20,
-  },
-})
+export default Menu;

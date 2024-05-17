@@ -13,6 +13,7 @@ import Auth from './pages/Auth/Auth';
 const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();
 import Icon from 'react-native-vector-icons/AntDesign';
+import { NativeBaseProvider } from 'native-base';
 
 const AuthStack = () => (
   <Stack.Navigator initialRouteName="SplasScreen">
@@ -50,9 +51,11 @@ const AppTabs = () => (
 const Router = () => {
   const [isLoggedIn, setLoggedIn] = useState(true);
   return (
+    <NativeBaseProvider>
     <NavigationContainer>
       {isLoggedIn ? <AppTabs /> : <AuthStack />}
     </NavigationContainer>
+    </NativeBaseProvider>
   );
 };
 
