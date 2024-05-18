@@ -12,7 +12,7 @@ const SearchAppBar = ({text,icon,search}) => {
     const [searchQuery, setSearchQuery] = useState('');
   return (
     <> 
-    <ZStack flex={1} w="100%" marginBottom={50}>
+    <ZStack flex={1} w="100%" marginBottom={0}>
       <Image
         source={require('../../assets/IMG/splash2.png')}
         style={{

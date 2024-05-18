@@ -8,7 +8,8 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   sectionContainer: {
-    flex: 2,
+    marginTop:viewHeight/25,
+    flex: 1.5,
   },
   sectionTitle: {
     fontWeight: '600',
@@ -79,9 +80,9 @@ const styles = StyleSheet.create({
   },
   scrollImageElementContainer2: {
     flexDirection: 'row',
-    justifyContent:"space-around",
+    justifyContent:"space-between",
     width: viewWidth/1.1,
-    height: viewHeight/8,
+    height: viewHeight/7.5,
     backgroundColor: 'white',
     borderRadius: 25,
     marginHorizontal: 20,
@@ -90,18 +91,18 @@ const styles = StyleSheet.create({
     backgroundColor: 'gray',
     borderRadius: 25,
     width: viewWidth/4,
-    height: viewHeight/8,
-    alignSelf: 'center',
+    height: viewHeight/7.5,
+    justifyContent:"center"
   },
   imageView2: {
-    height: 100,
-    width: 500,
+    height: viewHeight/9,
+    width: viewWidth/5,
     alignSelf: 'center',
   },
   scrollfooterView: {
     flexDirection: 'column',
-    width: '68%',
-    height: 100,
+    width: viewWidth/1.6,
+    height: viewHeight/18,
     marginLeft: 10,
     borderRadius: 20,
   },

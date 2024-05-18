@@ -4,64 +4,44 @@ import SearchAppBar from '../../components/AppBar/SearchAppBar'
 import { NativeBaseProvider } from 'native-base';
 import Fontisto from 'react-native-vector-icons/Fontisto';
 import CoffeCompo from '../../components/CoffeComponents/CoffeCompo';
-
 import {COLOUR} from '../../assets/settings';
 import styles from './Menu.style';
 
-function ScroolElement1() {
+function ScroolElement({title,onPress}) {
   return (
-    <View
-      style={{
-        flexDirection: 'row',
-        width: 200,
-        height: 50,
-        backgroundColor: 'white',
-        borderRadius: 22,
-        marginHorizontal: 10,
-      }}>
-      <View
-        style={{
-          backgroundColor: 'gray',
-          borderRadius: 25,
-          width: 40,
-          height:40,
-          alignSelf: 'center',
-          marginHorizontal:5
-        }}>
-          <Fontisto  style={{alignSelf:"center",marginVertical:10}} name="coffeescript" size={20} color="white"  />
+    <TouchableOpacity style={styles.scrollContainer} onPress={onPress}>
+      <View style={styles.iconContainer}>
+        <Fontisto style={styles.icon} name="coffeescript" size={20} color="white" />
       </View>
-      <Text style={{fontWeight: '500',color:COLOUR.black,alignSelf:"center"}}>
-        Caramel Macchiato
-      </Text>
-    </View>
+      <Text style={styles.text}>{title}</Text>
+    </TouchableOpacity>
   );
 }
 
 const Menu = () => {
-
   return (
-    <NativeBaseProvider> 
-      <View style={{flex:1.3}}> 
-      <SearchAppBar text={"Menu"} icon={false}/>
+    <View style={styles.container}> 
+      <View style={styles.appBarContainer}>
+        <SearchAppBar text="Menu" icon={false} />
       </View>
-      <View style={{flex:0.7}}> 
-      <Text style={{fontWeight:"600",color:"black",marginHorizontal:20,fontSize:18}}>Categories</Text>
-          <ScrollView showsHorizontalScrollIndicator={false} horizontal={true}  style={{marginVertical:10}}>
-            <View style={{flexDirection: 'row'}}>
-             <ScroolElement1/>
-             <ScroolElement1/>
-             <ScroolElement1/>
-            </View>
-          </ScrollView>
+      <View style={styles.categoriesContainer}>
+        <Text style={styles.categoriesTitle}>Categories</Text>
+      <ScrollView horizontal showsHorizontalScrollIndicator={false} style={styles.scrollView}>
+          <View style={styles.scroolElementsContainer}>
+            <ScroolElement title="Caramel Macchiato" />
+            <ScroolElement title="Espresso"  />
+            <ScroolElement title="Latte" />
+          </View>
+        </ScrollView>
       </View>
-      <View style={{flex:3.5}}> 
-          <ScrollView contentContainerStyle={styles.scrollContainer}>
-        {Array.from({ length: 15 }, (_, index) => (
-           <CoffeCompo index={index} style={{}} />
-        ))}
-      </ScrollView>
+      <View style={styles.coffeeListContainer}>
+        <ScrollView contentContainerStyle={styles.coffeeScrollContainer}>
+          {Array.from({ length: 15 }, (_, index) => (
+            <CoffeCompo key={index} index={index} />
+          ))}
+        </ScrollView>
       </View>
-      </NativeBaseProvider>
+      </View>
   )
 }
 
