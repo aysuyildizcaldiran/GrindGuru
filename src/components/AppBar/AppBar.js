@@ -25,9 +25,4 @@ const Appbar = () => {
           </NativeBaseProvider>
       );
 };
-
-const styles = StyleSheet.create({
-  
-});
-
 export default Appbar;

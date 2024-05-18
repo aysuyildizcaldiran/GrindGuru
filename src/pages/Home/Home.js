@@ -2,6 +2,7 @@ import {Text, View, Image, TouchableOpacity, ScrollView} from 'react-native';
 import React, {useState} from 'react';
 import SearchAppBar from '../../components/AppBar/SearchAppBar';
 import styles from './Home.style';
+import LnCoffeCompo from '../../components/CoffeComponents/LnCoffeCompo';
 
 const Home = () => {
   function ScroolElement({imageSource, title, price}) {
@@ -19,30 +20,6 @@ const Home = () => {
           <TouchableOpacity style={styles.addButton}>
             <Text style={styles.addButtonText}>+</Text>
           </TouchableOpacity>
-        </View>
-      </View>
-    );
-  }
-
-  function ScrollElement2({title, imageSource, price}) {
-    return (
-      <View style={styles.scrollElementContainer2}>
-        <View style={styles.scrollImageElementContainer2}>
-          <View style={styles.scrollImageElementView2}>
-            <Image
-              resizeMode="contain"
-              source={imageSource}
-              style={styles.imageView2}></Image>
-          </View>
-          <View style={styles.scrollfooterView}>
-            <Text style={styles.scrollTitle2}>{title}</Text>
-            <View style={styles.scrollPriceView2}>
-              <Text style={styles.scrollPriceTitle2}>{price}</Text>
-              <TouchableOpacity style={styles.scrollButtonView2}>
-                <Text style={styles.scrollButtonTitle2}>+</Text>
-              </TouchableOpacity>
-            </View>
-          </View>
         </View>
       </View>
     );
@@ -92,27 +69,27 @@ const Home = () => {
           showsHorizontalScrollIndicator={false}
           horizontal={false}
           style={styles.scrollView}>
-          <ScrollElement2
+          <LnCoffeCompo
             title="Caramel Latte"
             imageSource={require('../../assets/IMG/8.png')}
             price="40.00 TL"
           />
-          <ScrollElement2
+          <LnCoffeCompo
             title="Vanilla Latte"
             imageSource={require('../../assets/IMG/8.png')}
             price="45.00 TL"
           />
-          <ScrollElement2
+          <LnCoffeCompo
             title="Mocha Latte"
             imageSource={require('../../assets/IMG/8.png')}
             price="42.00 TL"
           />
-          <ScrollElement2
+          <LnCoffeCompo
             title="Hazelnut Latte"
             imageSource={require('../../assets/IMG/7.png')}
             price="38.00 TL"
           />
-          <ScrollElement2
+          <LnCoffeCompo
             title="Cappuccino"
             imageSource={require('../../assets/IMG/7.png')}
             price="36.00 TL"

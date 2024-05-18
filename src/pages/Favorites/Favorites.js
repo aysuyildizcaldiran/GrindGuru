@@ -7,23 +7,34 @@ import { NativeBaseProvider } from 'native-base'
 
 const Favorites = () => {
   return (
-    <NativeBaseProvider>
-       <View style={{flex:1}}> 
+    <> 
+       <View style={styles.container}> 
       <SearchAppBar text={"Favorites"} icon={false} search={false}/>
       </View>
-      <View style={{flex:3}}> 
-      <Text style={{fontWeight:"600",color:"black",marginHorizontal:30,fontSize:10,alignSelf:"flex-end"}}>3 items</Text>
-          <ScrollView showsHorizontalScrollIndicator={false} horizontal={false}  style={{marginVertical:10}}>
-            <LnCoffeCompo/>
-            <LnCoffeCompo/>
-            <LnCoffeCompo/>
+      <View style={styles.bodyContainer}> 
+      <Text style={styles.countText}>3 items</Text>
+          <ScrollView showsHorizontalScrollIndicator={false} horizontal={false}  style={styles.scroll}>
+            <LnCoffeCompo title={"Latte"} price={"1000 TL"} imageSource={require('../../assets/IMG/7.png')}/>
+            <LnCoffeCompo title={"LATTE"}price={"300 TL"} imageSource={require('../../assets/IMG/7.png')}/>
+            <LnCoffeCompo title={"LATTE"} price={"500 TL"} imageSource={require('../../assets/IMG/7.png')}/>
           </ScrollView>
       </View>
-     
-    </NativeBaseProvider>
+      </>
   )
 }
 
 export default Favorites
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({
+  container:{
+    flex:0.7,
+    marginBottom:10
+  },
+  bodyContainer:{
+    flex:3
+  },
+  countText:{fontWeight:"600",color:"black",marginHorizontal:30,fontSize:14,alignSelf:"flex-end"},
+  scroll:{
+    marginVertical:10
+  }
+})

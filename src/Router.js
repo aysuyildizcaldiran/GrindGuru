@@ -8,7 +8,6 @@ import Favorites from './pages/Favorites/Favorites';
 import Profile from './pages/Profile/Profile';
 import Cart from './pages/Cart/Cart';
 import SplashScreen from './pages/Auth/SplashScreen';
-import { View } from 'react-native';
 import Auth from './pages/Auth/Auth';
 const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();
@@ -23,6 +22,7 @@ const AuthStack = () => (
       options={{headerShown: false}}
     />
     <Stack.Screen name="Authh" component={Auth}  options={{headerShown: false}} />
+    <Stack.Screen name="HomeApp" component={AppTabs} options={{headerShown:false}} />
   </Stack.Navigator>
 );
 
@@ -49,7 +49,7 @@ const AppTabs = () => (
 
 
 const Router = () => {
-  const [isLoggedIn, setLoggedIn] = useState(true);
+  const [isLoggedIn, setLoggedIn] = useState(false);
   return (
     <NativeBaseProvider>
     <NavigationContainer>

@@ -74,68 +74,6 @@ const styles = StyleSheet.create({
     color: 'white',
     fontSize: 20,
   },
-  scrollElementContainer2: {
-    flexDirection: 'column',
-    marginVertical: 10,
-  },
-  scrollImageElementContainer2: {
-    flexDirection: 'row',
-    justifyContent:"space-between",
-    width: viewWidth/1.1,
-    height: viewHeight/7.5,
-    backgroundColor: 'white',
-    borderRadius: 25,
-    marginHorizontal: 20,
-  },
-  scrollImageElementView2: {
-    backgroundColor: 'gray',
-    borderRadius: 25,
-    width: viewWidth/4,
-    height: viewHeight/7.5,
-    justifyContent:"center"
-  },
-  imageView2: {
-    height: viewHeight/9,
-    width: viewWidth/5,
-    alignSelf: 'center',
-  },
-  scrollfooterView: {
-    flexDirection: 'column',
-    width: viewWidth/1.6,
-    height: viewHeight/18,
-    marginLeft: 10,
-    borderRadius: 20,
-  },
-  scrollTitle2: {
-    marginTop: 10,
-    marginLeft: 10,
-    width: viewWidth/2 ,
-    fontWeight: '500',
-    color: COLOUR.black,
-  },
-  scrollPriceView2: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    marginTop: 35,
-  },
-  scrollPriceTitle2: {
-    marginLeft: 10,
-    color: COLOUR.black,
-    fontWeight: '500',
-  },
-  scrollButtonView2: {
-    backgroundColor: COLOUR.themeRed,
-    width: 40,
-    height: 35,
-    borderBottomRightRadius: 20,
-    borderTopLeftRadius: 20,
-  },
-  scrollButtonTitle2: {
-    alignSelf: 'center',
-    top: 5,
-    color: 'white',
-    fontSize: 20,
-  },
 });
 
 export default styles;

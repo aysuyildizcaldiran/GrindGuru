@@ -11,7 +11,7 @@ const AuthCompo = () => {
         <View style={styles.container}>
         <TouchableOpacity
         style={styles.buttonContainer}
-        onPress={()=>navigation.navigate("Home")}>
+        onPress={()=>navigation.navigate("HomeApp")}>
         <Text style={styles.buttonText}>Login</Text>
       </TouchableOpacity>
       <View style={{height: '30%'}}>

@@ -68,5 +68,3 @@ const SearchAppBar = ({text,icon,search}) => {
 }
 
 export default SearchAppBar
-
-const styles = StyleSheet.create({})

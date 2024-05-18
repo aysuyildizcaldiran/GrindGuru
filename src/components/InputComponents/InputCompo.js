@@ -38,5 +38,3 @@ const InputCompo = ({placeholder, width, inputRightIcon,type}) => {
 };
 
 export default InputCompo;
-
-const styles = StyleSheet.create({});

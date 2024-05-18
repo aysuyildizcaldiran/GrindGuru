@@ -19,5 +19,3 @@ const ButtonCompo = ({variant,marginHorizontal,text,left,onpress}) => {
 }
 
 export default ButtonCompo;
-
-const styles = StyleSheet.create({})
