@@ -13,6 +13,7 @@ const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();
 import Icon from 'react-native-vector-icons/AntDesign';
 import { NativeBaseProvider } from 'native-base';
+import CoffeModal from './components/CoffeComponents/CoffeModal';
 
 const AuthStack = () => (
   <Stack.Navigator initialRouteName="SplasScreen">
@@ -49,7 +50,7 @@ const AppTabs = () => (
 
 
 const Router = () => {
-  const [isLoggedIn, setLoggedIn] = useState(false);
+  const [isLoggedIn, setLoggedIn] = useState(true);
   return (
     <NativeBaseProvider>
     <NavigationContainer>

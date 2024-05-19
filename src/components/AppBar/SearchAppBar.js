@@ -61,7 +61,6 @@ const SearchAppBar = ({text,icon,search}) => {
        />
      </View>
       : <></>}
-     
     </ZStack>
     </>
   )
