@@ -63,7 +63,6 @@ const CoffeCompo = () => {
       </View>
       <Modal isOpen={modalVisible} style={styles.modal}>
         <CoffeModal isModal={handleModal}></CoffeModal>
-        <View style={{flex: 2}}></View>
       </Modal>
     </View>
   );
@@ -108,8 +107,7 @@ const styles = StyleSheet.create({
     alignSelf: 'flex-end',
   },
   modal: {
-    width: '100%',
-    height: '100%',
+    flex:1,
     backgroundColor: 'white',
   },
   footer: {

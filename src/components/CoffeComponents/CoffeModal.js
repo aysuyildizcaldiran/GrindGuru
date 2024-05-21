@@ -5,6 +5,7 @@ import EvilIcons from 'react-native-vector-icons/EvilIcons';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import styles from './CoffeModal.style';
 import {COLOUR} from '../../assets/settings';
+import ButtonCompo from '../ButtonComponents/ButtonCompo';
 
 const CoffeModal = ({isModal}) => {
   const iconColorRef = useRef(false);
@@ -28,27 +29,28 @@ const CoffeModal = ({isModal}) => {
   };
 
   const SizeButton = ({text}) => {
-    return(
-    <TouchableOpacity
-      style={{
-        width: 100,
-        height: 50,
-        alignItems: 'center',
-        justifyContent: 'center',
-        borderRadius: 8,
-        shadowColor: 'black',
-        shadowOffset: {
-          width: 0,
-          height: 0,
-        },
-        shadowOpacity: 0.14,
-        shadowRadius: 0.27,
-        elevation: 5,
-        borderRadius: 50,
-        backgroundColor: 'white',
-      }}>
-      <Text>{text}</Text>
-    </TouchableOpacity>)
+    return (
+      <TouchableOpacity
+        style={{
+          width: 100,
+          height: 50,
+          alignItems: 'center',
+          justifyContent: 'center',
+          borderRadius: 8,
+          shadowColor: 'black',
+          shadowOffset: {
+            width: 0,
+            height: 0,
+          },
+          shadowOpacity: 0.14,
+          shadowRadius: 0.27,
+          elevation: 5,
+          borderRadius: 50,
+          backgroundColor: 'white',
+        }}>
+        <Text>{text}</Text>
+      </TouchableOpacity>
+    );
   };
   return (
     <>
@@ -98,12 +100,16 @@ const CoffeModal = ({isModal}) => {
           </TouchableOpacity>
         </View>
       </ZStack>
-      <View style={{top: 90}}>
-        <Text style={{fontSize: 20, fontWeight: '800', bottom: 10}}>
+      <View style={{ marginTop:50,flex: 2,justifyContent:"center"}}>
+        <Text style={{fontSize: 20, fontWeight: '800', bottom: 20}}>
           Caramel Macchiato
         </Text>
         <Text style={{fontSize: 15, fontWeight: '500'}}>
-          Caramel Macchiato Macchiato Macchiato Macchiato Macchiato Macchiato
+          Caramel Macchiato Macchiato %1,8 Yağlı süt (%75), 
+          Starbucks® Arabica kahve (su ve kahve ekstraktı) (%20), 
+          şeker (%5), aroma, asitlik düzenleyici (potasyum karbonat), 
+          stabilizatörler (karragenan, guar gum), emülgatörler 
+          (sebze kökenli yağ asidi mono- ve digliseritleri).
         </Text>
         <View>
           <View
@@ -121,9 +127,21 @@ const CoffeModal = ({isModal}) => {
               justifyContent: 'space-around',
               marginTop: 30,
             }}>
-              <SizeButton text="Small"></SizeButton>
-              <SizeButton text="Medium"></SizeButton>
-              <SizeButton text="Large"></SizeButton>
+            <SizeButton text="Small"></SizeButton>
+            <SizeButton text="Medium"></SizeButton>
+            <SizeButton text="Large"></SizeButton>
+          </View>
+          <View
+            style={{
+              flexDirection: 'row',
+              justifyContent: 'space-between',
+              marginTop: 100,
+            }}>
+            <Text style={{width:80,fontSize:15,fontWeight:"600"}}>Total Price 40 TL</Text>
+            <TouchableOpacity
+              style={styles.buttonContainer}>
+              <Text style={styles.buttonText}>Add to cart</Text>
+            </TouchableOpacity>
           </View>
         </View>
       </View>

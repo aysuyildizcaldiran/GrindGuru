@@ -8,7 +8,19 @@ const styles = StyleSheet.create({
       flex: 1,
       justifyContent: 'center',
       alignItems: 'center',
-      backgroundColor: '#2c3e50',
+    },
+    buttonContainer: {
+      alignSelf: 'center',
+      backgroundColor: '#293441',
+      paddingVertical: 15,
+      marginBottom: "10%",
+      borderRadius: 15,
+      width: '60%',
+      height:Dimensions.get("window").height/15
+    },
+    buttonText: {
+      textAlign: 'center',
+      color: 'white',
     },
     tabimage:{
       height: '100%',
@@ -22,6 +34,7 @@ const styles = StyleSheet.create({
       justifyContent: 'space-between',
       alignSelf:"center",
       width: '90%',
+     
      },
      backButton:{
       borderRadius:20,
