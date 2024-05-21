@@ -1,113 +1,134 @@
-//import liraries
-import {Modal, VStack, ZStack} from 'native-base';
-import React, {Component, useRef, useState} from 'react';
-import {View, Text, StyleSheet, Image,TouchableOpacity,Dimensions} from 'react-native';
+import {VStack, ZStack} from 'native-base';
+import React, {useRef, useState} from 'react';
+import {View, Text, Image, TouchableOpacity, Touchable} from 'react-native';
 import EvilIcons from 'react-native-vector-icons/EvilIcons';
 import Ionicons from 'react-native-vector-icons/Ionicons';
-import { COLOUR } from '../../assets/settings';
-
-const viewWidth=Dimensions.get("window").width;
-const viewHeight=Dimensions.get("window").height;
+import styles from './CoffeModal.style';
+import {COLOUR} from '../../assets/settings';
 
 const CoffeModal = ({isModal}) => {
-    const iconColorRef = useRef(false);
-    const [, forceUpdate] = useState(false);
-    const [count,setCount]=useState(0);
+  const iconColorRef = useRef(false);
+  const [, forceUpdate] = useState(false);
+  const [count, setCount] = useState(0);
 
-    const countAdd=()=>{setCount(count+1)}
-    const countRemove=()=>{count>0 ? setCount(count-1):<></>}
+  const countAdd = () => {
+    setCount(count + 1);
+  };
+  const countRemove = () => {
+    count > 0 && setCount(count - 1);
+  };
 
-    const handleFavorites = () => {
-      iconColorRef.current = !iconColorRef.current;
-      forceUpdate(prev => !prev);
-    };
+  const handleFavorites = () => {
+    iconColorRef.current = !iconColorRef.current;
+    forceUpdate(prev => !prev);
+  };
 
-    handleBack=()=>{
-        isModal(false)
-    }
+  const handleBack = () => {
+    isModal(false);
+  };
 
+  const SizeButton = ({text}) => {
+    return(
+    <TouchableOpacity
+      style={{
+        width: 100,
+        height: 50,
+        alignItems: 'center',
+        justifyContent: 'center',
+        borderRadius: 8,
+        shadowColor: 'black',
+        shadowOffset: {
+          width: 0,
+          height: 0,
+        },
+        shadowOpacity: 0.14,
+        shadowRadius: 0.27,
+        elevation: 5,
+        borderRadius: 50,
+        backgroundColor: 'white',
+      }}>
+      <Text>{text}</Text>
+    </TouchableOpacity>)
+  };
   return (
-    <> 
-    <ZStack flex={0.7} w="100%" marginBottom={0}>
-      <Image
-        source={require('../../assets/IMG/splash2.png')}
-        style={{
-          height: '100%',
-          width: '100%',
-          borderBottomLeftRadius: 30,
-          borderBottomRightRadius: 30,
-        }}></Image>
-      <View
-        style={{
-          bottom: '60%',
-          flexDirection: 'row',
-          justifyContent: 'space-between',
-          alignSelf:"center",
-          width: '90%',
-        }}>
-        <VStack>
-        <TouchableOpacity style={{
-          borderRadius:20,
-        alignItems: 'center',
-        width:viewWidth/10,height:viewHeight/20,
-        justifyContent:"center",
-        }} onPress={handleBack}> 
-        <Ionicons name="chevron-back" size={30} color={"white"} />
-        </TouchableOpacity>
-        </VStack>    
-        
-        <VStack>
-        <TouchableOpacity style={{
-          backgroundColor: iconColorRef.current ? COLOUR.themeRed :  "white",
-          borderRadius:20,
-        alignItems: 'center',
-        width:viewWidth/10,height:viewHeight/20,
-        justifyContent:"center",
-        alignSelf:"flex-end"
-        }} onPress={handleFavorites}> 
-        <EvilIcons name="heart" size={30} color={iconColorRef.current ? "white" : COLOUR.themedarkBlue } />
-        </TouchableOpacity>
-        </VStack>    
-      </View>
-    
-       <View style={{alignSelf: 'center', width: '100%',height:viewHeight/4,top:viewHeight/8,alignItems:"center"}}>
-       <Image
-        source={require('../../assets/IMG/7.png')}
-        resizeMode='center'
-        style={{
-          height: "100%",
-          width: "100%",
-          borderBottomLeftRadius: 30,
-          borderBottomRightRadius: 30,
-        }}></Image>
-     </View>
-     <View style={{alignSelf: "flex-start", width: '8%',height:viewHeight/8,
-     top:viewHeight/6,backgroundColor:COLOUR.themeRed,borderRadius:20,alignItems:"center",
-     justifyContent:"space-between",
-     padding:2,marginLeft:20
-     }}>
-       <TouchableOpacity onPress={countAdd}><Text style={{fontSize:16,fontWeight:"600",color:"white"}}>+</Text></TouchableOpacity>
-       <Text style={{fontSize:16,fontWeight:"600",color:"white"}}>{count}</Text>
-       <TouchableOpacity onPress={countRemove}><Text style={{fontSize:20, fontWeight:"800",color:"white"}}>-</Text></TouchableOpacity>
-     </View>
-     
-    </ZStack>
-    <View style={{top:90}}>
-        <Text style={{fontSize:20,fontWeight:"800",bottom:10}}>Caramel Macchiato</Text>
-        <Text style={{fontSize:15,fontWeight:"500"}}>Caramel Macchiato Macchiato Macchiato Macchiato Macchiato Macchiato</Text>
+    <>
+      <ZStack flex={0.7} w="100%" marginBottom={0}>
+        <Image
+          source={require('../../assets/IMG/splash2.png')}
+          style={styles.tabimage}></Image>
+        <View style={styles.tabView}>
+          <VStack>
+            <TouchableOpacity style={styles.backButton} onPress={handleBack}>
+              <Ionicons name="chevron-back" size={30} color={'white'} />
+            </TouchableOpacity>
+          </VStack>
 
-    </View>
+          <VStack>
+            <TouchableOpacity
+              style={[
+                styles.favoritesButton,
+                {
+                  backgroundColor: iconColorRef.current
+                    ? COLOUR.themeRed
+                    : 'white',
+                },
+              ]}
+              onPress={handleFavorites}>
+              <EvilIcons
+                name="heart"
+                size={30}
+                color={iconColorRef.current ? 'white' : COLOUR.themedarkBlue}
+              />
+            </TouchableOpacity>
+          </VStack>
+        </View>
+        <View style={styles.imageView}>
+          <Image
+            source={require('../../assets/IMG/7.png')}
+            resizeMode="center"
+            style={styles.coffeImage}></Image>
+        </View>
+        <View style={styles.coffeCountView}>
+          <TouchableOpacity onPress={countAdd}>
+            <Text style={styles.coffeAdd}>+</Text>
+          </TouchableOpacity>
+          <Text style={styles.coffeCountText}>{count}</Text>
+          <TouchableOpacity onPress={countRemove}>
+            <Text style={styles.coffeRemove}>-</Text>
+          </TouchableOpacity>
+        </View>
+      </ZStack>
+      <View style={{top: 90}}>
+        <Text style={{fontSize: 20, fontWeight: '800', bottom: 10}}>
+          Caramel Macchiato
+        </Text>
+        <Text style={{fontSize: 15, fontWeight: '500'}}>
+          Caramel Macchiato Macchiato Macchiato Macchiato Macchiato Macchiato
+        </Text>
+        <View>
+          <View
+            style={{
+              flexDirection: 'row',
+              justifyContent: 'space-between',
+              marginTop: 30,
+            }}>
+            <Text style={[styles.coffeCountText, {color: 'black'}]}>Size</Text>
+            <Text style={[styles.coffeCountText, {color: 'black'}]}>250ml</Text>
+          </View>
+          <View
+            style={{
+              flexDirection: 'row',
+              justifyContent: 'space-around',
+              marginTop: 30,
+            }}>
+              <SizeButton text="Small"></SizeButton>
+              <SizeButton text="Medium"></SizeButton>
+              <SizeButton text="Large"></SizeButton>
+          </View>
+        </View>
+      </View>
     </>
   );
 };
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#2c3e50',
-  },
-});
 
 export default CoffeModal;

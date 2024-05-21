@@ -1,10 +1,8 @@
 import { Text, View,ScrollView ,Image ,TouchableOpacity} from 'react-native'
 import React, { useState } from 'react'
 import SearchAppBar from '../../components/AppBar/SearchAppBar'
-import { NativeBaseProvider } from 'native-base';
 import Fontisto from 'react-native-vector-icons/Fontisto';
 import CoffeCompo from '../../components/CoffeComponents/CoffeCompo';
-import {COLOUR} from '../../assets/settings';
 import styles from './Menu.style';
 
 function ScroolElement({title,onPress}) {
