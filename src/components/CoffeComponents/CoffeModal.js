@@ -1,16 +1,18 @@
 import {VStack, ZStack} from 'native-base';
-import React, {useRef, useState} from 'react';
+import React, {useRef, useState,useReducer} from 'react';
 import {View, Text, Image, TouchableOpacity, Touchable} from 'react-native';
 import EvilIcons from 'react-native-vector-icons/EvilIcons';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import styles from './CoffeModal.style';
 import {COLOUR} from '../../assets/settings';
 import ButtonCompo from '../ButtonComponents/ButtonCompo';
+import reducer from '../../Reducer';
 
 const CoffeModal = ({isModal}) => {
   const iconColorRef = useRef(false);
   const [, forceUpdate] = useState(false);
   const [count, setCount] = useState(0);
+  const [size, setSize] = useState("250");
 
   const countAdd = () => {
     setCount(count + 1);
@@ -28,7 +30,12 @@ const CoffeModal = ({isModal}) => {
     isModal(false);
   };
 
-  const SizeButton = ({text}) => {
+  const SizeButton = ({text,size}) => {
+    const [state, dispatch] = useReducer(reducer, initialState);
+    const handleColor=()=>{
+      dispatch({ type: 'TOGGLE_COLOR' });
+      setSize(size);
+    }
     return (
       <TouchableOpacity
         style={{
@@ -46,12 +53,13 @@ const CoffeModal = ({isModal}) => {
           shadowRadius: 0.27,
           elevation: 5,
           borderRadius: 50,
-          backgroundColor: 'white',
-        }}>
+          backgroundColor: state.color ? "red" :"white",
+        }} onPress={handleColor}>
         <Text>{text}</Text>
       </TouchableOpacity>
     );
   };
+  
   return (
     <>
       <ZStack flex={0.7} w="100%" marginBottom={0}>
@@ -119,7 +127,7 @@ const CoffeModal = ({isModal}) => {
               marginTop: 30,
             }}>
             <Text style={[styles.coffeCountText, {color: 'black'}]}>Size</Text>
-            <Text style={[styles.coffeCountText, {color: 'black'}]}>250ml</Text>
+            <Text style={[styles.coffeCountText, {color: 'black'}]}>{size+"ml"}</Text>
           </View>
           <View
             style={{
@@ -127,9 +135,9 @@ const CoffeModal = ({isModal}) => {
               justifyContent: 'space-around',
               marginTop: 30,
             }}>
-            <SizeButton text="Small"></SizeButton>
-            <SizeButton text="Medium"></SizeButton>
-            <SizeButton text="Large"></SizeButton>
+            <SizeButton text="Small" size="250"></SizeButton>
+            <SizeButton text="Medium" size="500"></SizeButton>
+            <SizeButton text="Large" size="750"></SizeButton>
           </View>
           <View
             style={{
