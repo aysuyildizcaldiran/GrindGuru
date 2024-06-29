@@ -13,7 +13,7 @@ const Login = () => {
       <ButtonCompo variant={"link"} marginHorizontal={10} text={"Forgot Password?"} left={Dimensions.get("window").width/4} />
       </View>
       <View style={styles.authContainer}>  
-      <AuthCompo/>
+      <AuthCompo text={"Or Register with"} buttonText={"Login"} textbuttonText={"Register Now"} />
       </View>
     </View>
   );

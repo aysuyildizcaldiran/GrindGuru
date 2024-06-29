@@ -87,7 +87,7 @@ const CoffeModal = ({isModal}) => {
         <View style={styles.imageView}>
           <Image
             source={require('../../assets/IMG/7.png')}
-            resizeMode="center"
+            resizeMode="contain"
             style={styles.coffeImage}></Image>
         </View>
         <View style={styles.coffeCountView}>

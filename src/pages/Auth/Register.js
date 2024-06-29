@@ -13,7 +13,7 @@ const Register = () => {
       <InputCompo placeholder={"Confirm Password"} inputRightIcon={true} width={"80%"} type={true}/> 
       </View>
       <View style={styles.authContainer}>
-       <AuthCompo />
+       <AuthCompo text={"Or Login with"} buttonText={"Register"} textbuttonText={"Login Now"} />
       </View>
 
     </View>

@@ -55,7 +55,7 @@ const AppBar = ({ toggleValue, setToggleValue }) => {
             animationDuration={0}
             value={toggleValue}
             onPress={newState => setToggleValue(newState)}
-            leftTitle="Login"
+            leftTitle="Sign In"
             rightTitle="Register"
           />
         </View>

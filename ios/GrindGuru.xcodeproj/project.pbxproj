@@ -37,25 +37,6 @@
 		13B07FB81A68108700A75B9A /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = PrivacyInfo.xcprivacy; path = GrindGuru/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		19F6CBCC0A4E27FBF8BF4A61 /* libPods-GrindGuru-GrindGuruTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-GrindGuru-GrindGuruTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B4392A12AC88292D35C810B /* Pods-GrindGuru.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GrindGuru.debug.xcconfig"; path = "Target Support Files/Pods-GrindGuru/Pods-GrindGuru.debug.xcconfig"; sourceTree = "<group>"; };
-		417B302A2BE16C7600E75EFF /* Fontisto.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Fontisto.ttf; sourceTree = "<group>"; };
-		417B302B2BE16C7600E75EFF /* Octicons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Octicons.ttf; sourceTree = "<group>"; };
-		417B302C2BE16C7600E75EFF /* Feather.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Feather.ttf; sourceTree = "<group>"; };
-		417B302D2BE16C7600E75EFF /* FontAwesome6_Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FontAwesome6_Regular.ttf; sourceTree = "<group>"; };
-		417B302E2BE16C7600E75EFF /* Entypo.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Entypo.ttf; sourceTree = "<group>"; };
-		417B302F2BE16C7600E75EFF /* FontAwesome5_Brands.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FontAwesome5_Brands.ttf; sourceTree = "<group>"; };
-		417B30302BE16C7600E75EFF /* MaterialCommunityIcons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = MaterialCommunityIcons.ttf; sourceTree = "<group>"; };
-		417B30312BE16C7600E75EFF /* AntDesign.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = AntDesign.ttf; sourceTree = "<group>"; };
-		417B30322BE16C7600E75EFF /* Foundation.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Foundation.ttf; sourceTree = "<group>"; };
-		417B30332BE16C7600E75EFF /* Ionicons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Ionicons.ttf; sourceTree = "<group>"; };
-		417B30342BE16C7600E75EFF /* FontAwesome5_Solid.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FontAwesome5_Solid.ttf; sourceTree = "<group>"; };
-		417B30352BE16C7600E75EFF /* FontAwesome5_Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FontAwesome5_Regular.ttf; sourceTree = "<group>"; };
-		417B30362BE16C7600E75EFF /* FontAwesome.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FontAwesome.ttf; sourceTree = "<group>"; };
-		417B30372BE16C7600E75EFF /* Zocial.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Zocial.ttf; sourceTree = "<group>"; };
-		417B30382BE16C7600E75EFF /* EvilIcons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = EvilIcons.ttf; sourceTree = "<group>"; };
-		417B30392BE16C7600E75EFF /* FontAwesome6_Solid.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FontAwesome6_Solid.ttf; sourceTree = "<group>"; };
-		417B303A2BE16C7600E75EFF /* SimpleLineIcons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = SimpleLineIcons.ttf; sourceTree = "<group>"; };
-		417B303B2BE16C7600E75EFF /* FontAwesome6_Brands.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FontAwesome6_Brands.ttf; sourceTree = "<group>"; };
-		417B303C2BE16C7600E75EFF /* MaterialIcons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = MaterialIcons.ttf; sourceTree = "<group>"; };
 		5709B34CF0A7D63546082F79 /* Pods-GrindGuru.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GrindGuru.release.xcconfig"; path = "Target Support Files/Pods-GrindGuru/Pods-GrindGuru.release.xcconfig"; sourceTree = "<group>"; };
 		5B7EB9410499542E8C5724F5 /* Pods-GrindGuru-GrindGuruTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GrindGuru-GrindGuruTests.debug.xcconfig"; path = "Target Support Files/Pods-GrindGuru-GrindGuruTests/Pods-GrindGuru-GrindGuruTests.debug.xcconfig"; sourceTree = "<group>"; };
 		5DCACB8F33CDC322A6C60F78 /* libPods-GrindGuru.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-GrindGuru.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -125,33 +106,6 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		417B30292BE16C7600E75EFF /* Fonts */ = {
-			isa = PBXGroup;
-			children = (
-				417B302A2BE16C7600E75EFF /* Fontisto.ttf */,
-				417B302B2BE16C7600E75EFF /* Octicons.ttf */,
-				417B302C2BE16C7600E75EFF /* Feather.ttf */,
-				417B302D2BE16C7600E75EFF /* FontAwesome6_Regular.ttf */,
-				417B302E2BE16C7600E75EFF /* Entypo.ttf */,
-				417B302F2BE16C7600E75EFF /* FontAwesome5_Brands.ttf */,
-				417B30302BE16C7600E75EFF /* MaterialCommunityIcons.ttf */,
-				417B30312BE16C7600E75EFF /* AntDesign.ttf */,
-				417B30322BE16C7600E75EFF /* Foundation.ttf */,
-				417B30332BE16C7600E75EFF /* Ionicons.ttf */,
-				417B30342BE16C7600E75EFF /* FontAwesome5_Solid.ttf */,
-				417B30352BE16C7600E75EFF /* FontAwesome5_Regular.ttf */,
-				417B30362BE16C7600E75EFF /* FontAwesome.ttf */,
-				417B30372BE16C7600E75EFF /* Zocial.ttf */,
-				417B30382BE16C7600E75EFF /* EvilIcons.ttf */,
-				417B30392BE16C7600E75EFF /* FontAwesome6_Solid.ttf */,
-				417B303A2BE16C7600E75EFF /* SimpleLineIcons.ttf */,
-				417B303B2BE16C7600E75EFF /* FontAwesome6_Brands.ttf */,
-				417B303C2BE16C7600E75EFF /* MaterialIcons.ttf */,
-			);
-			name = Fonts;
-			path = "../node_modules/react-native-vector-icons/Fonts";
-			sourceTree = "<group>";
-		};
 		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
@@ -162,7 +116,6 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
-				417B30292BE16C7600E75EFF /* Fonts */,
 				13B07FAE1A68108700A75B9A /* GrindGuru */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
 				00E356EF1AD99517003FC87E /* GrindGuruTests */,

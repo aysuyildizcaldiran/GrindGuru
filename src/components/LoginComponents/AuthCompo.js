@@ -3,8 +3,9 @@ import React, {useState} from 'react';
 import Fontisto from 'react-native-vector-icons/Fontisto';
 import ButtonCompo from '../ButtonComponents/ButtonCompo';
 import { useNavigation } from '@react-navigation/native';
+import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 
-const AuthCompo = () => {
+const AuthCompo = ({text,buttonText,textbuttonText}) => {
   const navigation = useNavigation();
 
     return (
@@ -12,7 +13,7 @@ const AuthCompo = () => {
         <TouchableOpacity
         style={styles.buttonContainer}
         onPress={()=>navigation.navigate("HomeApp")}>
-        <Text style={styles.buttonText}>Login</Text>
+        <Text style={styles.buttonText}>{buttonText}</Text>
       </TouchableOpacity>
       <View style={{height: '30%'}}>
         <View
@@ -31,7 +32,7 @@ const AuthCompo = () => {
               marginHorizontal: 15,
             }}
           />
-          <Text style={{textAlign: 'center'}}>Or Login with</Text>
+          <Text style={{textAlign: 'center'}}>{text}</Text>
           <View
             style={{
               width: '28%',
@@ -92,7 +93,7 @@ const AuthCompo = () => {
           alignItems: 'center',
         }}>
         <Text style={{fontSize: 15}}>Already have an account?</Text>
-        <ButtonCompo  variant={"link"}  text={"Register Now"} />
+        <ButtonCompo  variant={"link"}  text={textbuttonText} />
       </View>
         </View>
     );
