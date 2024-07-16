@@ -27,7 +27,7 @@ const Home = () => {
 
   return (
     <View style={styles.container}>
-      <SearchAppBar text={'Good morning , User'} icon={true} />
+      <SearchAppBar text={'Good morning , Aysu Yıldız'} icon={true} />
       <View style={styles.sectionContainer}>
         <Text style={styles.sectionTitle}>New in</Text>
         <ScrollView
