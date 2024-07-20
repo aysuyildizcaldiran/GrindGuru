@@ -10,17 +10,18 @@ const styles = StyleSheet.create({
       alignItems: 'center',
     },
     buttonContainer: {
-      alignSelf: 'center',
+      alignSelf: 'flex-end',
       backgroundColor: '#293441',
       paddingVertical: 15,
-      marginBottom: "10%",
       borderRadius: 15,
       width: '60%',
-      height:Dimensions.get("window").height/15
+      height:Dimensions.get("window").height/15,
+      justifyContent: 'center',
     },
     buttonText: {
       textAlign: 'center',
       color: 'white',
+    
     },
     tabimage:{
       height: '100%',
@@ -53,7 +54,7 @@ const styles = StyleSheet.create({
       alignSelf: 'center',
       width: '100%',
       height: viewHeight / 4,
-      top: viewHeight / 10,
+      top: viewHeight / 7,
       alignItems: 'center',
      },
      coffeImage:{
@@ -66,7 +67,7 @@ const styles = StyleSheet.create({
       alignSelf: 'flex-start',
       width: '8%',
       height: viewHeight / 8,
-      top: viewHeight / 6,
+      top: viewHeight / 4.5,
       backgroundColor: COLOUR.themeRed,
       borderRadius: 20,
       alignItems: 'center',

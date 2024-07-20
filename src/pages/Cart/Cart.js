@@ -9,6 +9,7 @@ import {
 } from 'react-native';
 import React, {useState} from 'react';
 import SearchAppBar from '../../components/AppBar/SearchAppBar';
+import { COLOUR } from '../../assets/settings';
 
 const Cart = ({navigation}) => {
   const CartView = ({text, totalText, style}) => {
@@ -73,7 +74,7 @@ const Cart = ({navigation}) => {
               <TextInput style={{flex: 0.5}}></TextInput>
               <TouchableOpacity
                 style={{
-                  backgroundColor: 'red',
+                  backgroundColor: COLOUR.themeRed,
                   right: 0,
                   position: 'absolute',
                   height: '100%',
@@ -147,7 +148,7 @@ const styles = StyleSheet.create({
   },
   buttonView: {
     flex: 0.1,
-    backgroundColor: 'red',
+    backgroundColor: COLOUR.themeRed,
     borderRadius: 25,
     justifyContent: 'space-around',
   },

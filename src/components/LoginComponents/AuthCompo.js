@@ -112,7 +112,8 @@ const styles = StyleSheet.create({
         marginBottom: "10%",
         borderRadius: 15,
         width: '60%',
-        height:Dimensions.get("window").height/15
+        height:Dimensions.get("window").height/15,
+        justifyContent: 'center',
       },
       buttonText: {
         textAlign: 'center',

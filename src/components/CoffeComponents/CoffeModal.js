@@ -1,6 +1,6 @@
 import {VStack, ZStack} from 'native-base';
 import React, {useRef, useState} from 'react';
-import {View, Text, Image, TouchableOpacity, Touchable} from 'react-native';
+import {View, Text, Image, TouchableOpacity} from 'react-native';
 import EvilIcons from 'react-native-vector-icons/EvilIcons';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import styles from './CoffeModal.style';
@@ -11,6 +11,7 @@ const CoffeModal = ({isModal}) => {
   const iconColorRef = useRef(false);
   const [, forceUpdate] = useState(false);
   const [count, setCount] = useState(0);
+  const [selectedSize, setSelectedSize] = useState('0'); // State for selected size
 
   const countAdd = () => {
     setCount(count + 1);
@@ -28,7 +29,12 @@ const CoffeModal = ({isModal}) => {
     isModal(false);
   };
 
-  const SizeButton = ({text}) => {
+  const handleSizePress = (size) => {
+    setSelectedSize(size);
+  };
+
+  const SizeButton = ({text,size}) => {
+    const isSelected = selectedSize === size;
     return (
       <TouchableOpacity
         style={{
@@ -36,25 +42,23 @@ const CoffeModal = ({isModal}) => {
           height: 50,
           alignItems: 'center',
           justifyContent: 'center',
-          borderRadius: 8,
-          shadowColor: 'black',
-          shadowOffset: {
-            width: 0,
-            height: 0,
-          },
-          shadowOpacity: 0.14,
-          shadowRadius: 0.27,
-          elevation: 5,
           borderRadius: 50,
-          backgroundColor: 'white',
-        }}>
-        <Text>{text}</Text>
+          shadowColor: 'black',
+          shadowOffset: { width: 0, height: 0 },
+          shadowOpacity: 0.5,
+          shadowRadius: 10,
+          backgroundColor: isSelected ? COLOUR.themeRed : 'white',
+        }}
+        onPress={() => handleSizePress(size)}
+      >
+        <Text style={{ color: isSelected ? 'white' : 'black' }}>{text}</Text>
       </TouchableOpacity>
     );
   };
+
   return (
     <>
-      <ZStack flex={0.7} w="100%" marginBottom={0}>
+      <ZStack flex={1} w="100%" marginBottom={"20%"}>
         <Image
           source={require('../../assets/IMG/splash2.png')}
           style={styles.tabimage}></Image>
@@ -100,15 +104,15 @@ const CoffeModal = ({isModal}) => {
           </TouchableOpacity>
         </View>
       </ZStack>
-      <View style={{ marginTop:50,flex: 2,justifyContent:"center"}}>
-        <Text style={{fontSize: 20, fontWeight: '800', bottom: 20}}>
+      <View style={{flex: 2, marginHorizontal: 20 }}>
+        <Text style={{ fontSize: 20, fontWeight: '800', bottom: 20 }}>
           Caramel Macchiato
         </Text>
-        <Text style={{fontSize: 15, fontWeight: '500'}}>
-          Caramel Macchiato Macchiato %1,8 Yağlı süt (%75), 
-          Starbucks® Arabica kahve (su ve kahve ekstraktı) (%20), 
-          şeker (%5), aroma, asitlik düzenleyici (potasyum karbonat), 
-          stabilizatörler (karragenan, guar gum), emülgatörler 
+        <Text style={{ fontSize: 15, fontWeight: '500' }}>
+          Caramel Macchiato Macchiato %1,8 Yağlı süt (%75),
+          Starbucks® Arabica kahve (su ve kahve ekstraktı) (%20),
+          şeker (%5), aroma, asitlik düzenleyici (potasyum karbonat),
+          stabilizatörler (karragenan, guar gum), emülgatörler
           (sebze kökenli yağ asidi mono- ve digliseritleri).
         </Text>
         <View>
@@ -116,28 +120,31 @@ const CoffeModal = ({isModal}) => {
             style={{
               flexDirection: 'row',
               justifyContent: 'space-between',
-              marginTop: 30,
+              top: "15%",
+              flex:0.1
             }}>
-            <Text style={[styles.coffeCountText, {color: 'black'}]}>Size</Text>
-            <Text style={[styles.coffeCountText, {color: 'black'}]}>250ml</Text>
+            <Text style={[styles.coffeCountText, { color: 'black' }]}>Size</Text>
+            <Text style={[styles.coffeCountText, { color: 'black' }]}>{selectedSize}ml</Text>
           </View>
           <View
             style={{
               flexDirection: 'row',
               justifyContent: 'space-around',
-              marginTop: 30,
+              flex:0.3,
+              top:"20%"
             }}>
-            <SizeButton text="Small"></SizeButton>
-            <SizeButton text="Medium"></SizeButton>
-            <SizeButton text="Large"></SizeButton>
+            <SizeButton text="Small" size="250"/>
+            <SizeButton text="Medium"  size="500"/>
+            <SizeButton text="Large" size="700"/>
           </View>
           <View
             style={{
               flexDirection: 'row',
               justifyContent: 'space-between',
-              marginTop: 100,
+              flex:0.4,
+            
             }}>
-            <Text style={{width:80,fontSize:15,fontWeight:"600"}}>Total Price 40 TL</Text>
+            <Text style={{ width: 80, fontSize: 15, fontWeight: "600",alignSelf:"flex-end",bottom:"3%"}}>Total Price 40 TL</Text>
             <TouchableOpacity
               style={styles.buttonContainer}>
               <Text style={styles.buttonText}>Add to cart</Text>
