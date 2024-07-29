@@ -14,9 +14,9 @@ const Favorites = () => {
       <View style={styles.bodyContainer}> 
       <Text style={styles.countText}>3 items</Text>
           <ScrollView showsHorizontalScrollIndicator={false} horizontal={false}  style={styles.scroll}>
-            <LnCoffeCompo title={"Latte"} price={"1000 TL"} imageSource={require('../../assets/IMG/7.png')}/>
-            <LnCoffeCompo title={"LATTE"}price={"300 TL"} imageSource={require('../../assets/IMG/7.png')}/>
-            <LnCoffeCompo title={"LATTE"} price={"500 TL"} imageSource={require('../../assets/IMG/7.png')}/>
+            <LnCoffeCompo title={"Latte"} price={"100 TL"} imageSource={require('../../assets/IMG/7.png')}/>
+            <LnCoffeCompo title={"Caramel Macchiato"}price={"350 TL"} imageSource={require('../../assets/IMG/8.png')}/>
+            <LnCoffeCompo title={"Caramel LATTE"} price={"300 TL"} imageSource={require('../../assets/IMG/7.png')}/>
           </ScrollView>
       </View>
       </>
